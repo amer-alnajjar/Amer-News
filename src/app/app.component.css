@@ -1,0 +1,15 @@
+.example-container {
+  height: calc(100% - 64px);
+}
+.example-sidenav {
+  padding: 15px;
+  width: 280px;
+}
+.menu-button:hover {
+  background-color: rgba(239, 240, 241, 0.212);
+}
+
+.text {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
