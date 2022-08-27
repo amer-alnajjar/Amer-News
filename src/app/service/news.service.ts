@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -10,12 +11,13 @@ export class NewsService {
 
   getAllSourcesNews() {
     return this.http.get(
-      'https://newsapi.org/v2/sources?language=en&apiKey=' + this.api_key
+      environment.apiUrl + 'sources?language=en&apiKey=' + this.api_key
     );
   }
   getArticleHeadlinesWithId(id: string) {
     return this.http.get(
-      'https://newsapi.org/v2/top-headlines?sources=' +
+      environment.apiUrl +
+        'top-headlines?sources=' +
         id +
         '&apiKey=' +
         this.api_key
@@ -23,7 +25,8 @@ export class NewsService {
   }
   getAllArticlesNews() {
     return this.http.get(
-      'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=' +
+      environment.apiUrl +
+        'top-headlines?sources=techcrunch&apiKey=' +
         this.api_key
     );
   }
