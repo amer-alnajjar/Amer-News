@@ -45,21 +45,18 @@ export class AppComponent implements AfterViewInit, OnInit {
   }
   getAllArticales() {
     this.service.getAllArticlesNews().subscribe((res: any) => {
-      console.log(res);
       this.articles = res.articles;
     });
   }
 
   getAllSources() {
     this.service.getAllSourcesNews().subscribe((res: any) => {
-      console.log(res);
       this.sources = res.sources;
     });
   }
 
   getHeadlineSelected(item: any) {
-    this.service.getArticleHeadlinesWithId(item.id).subscribe((res: any) => {
-      console.log(res);
+    this.service.getArticleHeadlinesWithId(item.id).subscribe((res: any)  => {
       this.articles = res.articles;
       this.headlines = item.name;
     });
